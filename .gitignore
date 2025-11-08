@@ -1,0 +1,38 @@
+# Build results
+/bin/
+/obj/
+/out/
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# .NET Core build artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Backup & temp files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# Environment & secrets
+.env
+.env.*
+secrets.json
+
+# Other common folders
+node_modules/
+dist/

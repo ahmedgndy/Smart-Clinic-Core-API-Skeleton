@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Smart-Clinic-Core-APi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6a3a9c867beb8a9b18f32a4a39a960b53e963ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("Smart-Clinic-Core-APi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Smart-Clinic-Core-APi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

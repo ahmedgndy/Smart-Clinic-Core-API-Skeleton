@@ -32,3 +32,4 @@ C:\Users\El-Wattaneya\Desktop\Smart-Clinic-Core-APi\obj\Debug\net10.0\refint\Sma
 C:\Users\El-Wattaneya\Desktop\Smart-Clinic-Core-APi\obj\Debug\net10.0\Smart-Clinic-Core-APi.pdb
 C:\Users\El-Wattaneya\Desktop\Smart-Clinic-Core-APi\obj\Debug\net10.0\Smart-Clinic-Core-APi.genruntimeconfig.cache
 C:\Users\El-Wattaneya\Desktop\Smart-Clinic-Core-APi\obj\Debug\net10.0\ref\Smart-Clinic-Core-APi.dll
+C:\Users\El-Wattaneya\Desktop\Smart-Clinic-Core-APi\obj\Debug\net10.0\Smart-Clinic-Core-APi.sourcelink.json
