@@ -1,12 +1,15 @@
-using Microsoft.EntityFrameworkCore;
+
+
 using Smart_Clinic_Core_APi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Smart_Clinic_Core_APi.Infrastructure;
 
 public class ClinicDbContext : DbContext
 {
-    public ClinicDbContext(DbContextOptions<ClinicDbContext> options) : base(options) { }
-
+    public ClinicDbContext(DbContextOptions<ClinicDbContext> options) : base(options)
+    {
+    }
 
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Patient> Patients { get; set; }
@@ -50,3 +53,4 @@ public class ClinicDbContext : DbContext
         .OnDelete(DeleteBehavior.Cascade);
     }
 }
+
