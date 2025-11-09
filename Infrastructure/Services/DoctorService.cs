@@ -1,5 +1,5 @@
 using SmartClinic.Core.Interfaces;
-using SmartClinic.Models;
+using SmartClinic.Core.Models;
 
 namespace SmartClinic.Infrastructure.Services
 {

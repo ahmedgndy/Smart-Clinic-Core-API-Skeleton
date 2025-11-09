@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SmartClinic.Models;
+using SmartClinic.Core.Models;
 
 namespace SmartClinic.Infrastructure.Configurations
 {

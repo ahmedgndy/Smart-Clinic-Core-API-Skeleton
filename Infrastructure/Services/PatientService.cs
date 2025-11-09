@@ -1,31 +1,36 @@
-using SmartClinic.Interfaces;
-using SmartClinic.Models;
+using SmartClinic.Core.Interfaces;
+using SmartClinic.Core.Models;
 
-public class PatientService : IPatientService
+
+namespace SmartClinic.Infrastructure.Services
 {
-    private readonly IPatientRepository _repo;
-    public PatientService(IPatientRepository repo) { _repo = repo; }
 
-    public async Task<Patient> CreateAsync(Patient patient)
+    public class PatientService : IPatientService
     {
-        patient.Id = Guid.NewGuid();
-        await _repo.AddAsync(patient);
-        return patient;
-    }
+        private readonly IPatientRepository _repo;
+        public PatientService(IPatientRepository repo) { _repo = repo; }
 
-    public async Task DeleteAsync(Guid id) => await _repo.DeleteAsync(id);
+        public async Task<Patient> CreateAsync(Patient patient)
+        {
+            patient.Id = Guid.NewGuid();
+            await _repo.AddAsync(patient);
+            return patient;
+        }
 
-    public async Task<Patient> GetByIdAsync(Guid id) => await _repo.GetByIdAsync(id);
+        public async Task DeleteAsync(Guid id) => await _repo.DeleteAsync(id);
 
-    public async Task<IEnumerable<Patient>> ListAsync() => await _repo.ListAsync();
+        public async Task<Patient> GetByIdAsync(Guid id) => await _repo.GetByIdAsync(id);
 
-    public async Task<Patient> UpdateAsync(Guid id, Patient patient)
-    {
-        var existing = await _repo.GetByIdAsync(id) ?? throw new ArgumentException("Patient not found");
-        existing.FullName = patient.FullName;
-        existing.Email = patient.Email;
-        existing.DateOfBirth = patient.DateOfBirth;
-        await _repo.UpdateAsync(existing);
-        return existing;
+        public async Task<IEnumerable<Patient>> ListAsync() => await _repo.ListAsync();
+
+        public async Task<Patient> UpdateAsync(Guid id, Patient patient)
+        {
+            var existing = await _repo.GetByIdAsync(id) ?? throw new ArgumentException("Patient not found");
+            existing.FullName = patient.FullName;
+            existing.Email = patient.Email;
+            existing.DateOfBirth = patient.DateOfBirth;
+            await _repo.UpdateAsync(existing);
+            return existing;
+        }
     }
 }

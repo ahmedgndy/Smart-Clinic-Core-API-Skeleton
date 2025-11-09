@@ -1,10 +1,12 @@
 
 
 using Microsoft.EntityFrameworkCore;
-using SmartClinic.DTOs.create;
-using SmartClinic.DTOs.Update;
-using SmartClinic.Enums;
-using SmartClinic.Interfaces;
+using SmartClinic.Core.Interfaces;
+using SmartClinic.Core.DTOs.Update;
+using SmartClinic.Core
+.Enums;
+using SmartClinic.Core.Models;
+using SmartClinic.Core.DTOs.create;
 
 namespace SmartClinic.Infrastructure.Services
 {
@@ -109,7 +111,6 @@ namespace SmartClinic.Infrastructure.Services
             ap.Status = AppointmentStatus.Rejected;
             await _repo.UpdateAsync(ap);
         }
-
 
     }
 }

@@ -1,8 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
-using SmartClinic.DTOs.Create;
-using SmartClinic.Enums;
-using SmartClinic.Interfaces;
+using SmartClinic.Core.DTOs.Create;
+using SmartClinic.Core.Enums;
+using SmartClinic.Core.Interfaces;
+using SmartClinic.Core.Models;
+
 
 namespace SmartClinic.Infrastructure.Services
 {
