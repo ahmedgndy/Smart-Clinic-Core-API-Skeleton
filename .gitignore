@@ -1,10 +1,12 @@
+# =========================
+# .NET & Visual Studio Files
+# =========================
+
 # Build results
-/bin/
-/obj/
-/out/
-/vscode/
-
-
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
 # User-specific files
 *.user
@@ -12,27 +14,73 @@
 *.userosscache
 *.sln.docstates
 
-# Logs
-*.log
-
-# .NET Core build artifacts
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
 # Backup & temp files
 *.tmp
-*.temp
 *.bak
-*.swp
-*.DS_Store
-Thumbs.db
+*.backup
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.vshost.*
+*.dbmdl
+*.dbproj.schemaview
+*.pdb
 
-# Environment & secrets
+# .NET secrets
+secrets.json
+appsettings.Development.json
+
+# Environment files
 .env
 .env.*
-secrets.json
 
-# Other common folders
-node_modules/
+# Visual Studio Code
+.vscode/
+.history/
+*.code-workspace
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Rider / JetBrains IDE
+.idea/
+
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Publish output
+publish/
+wwwroot/
 dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Custom Project Files
+# =========================
+
+# SQLite or Local DB
+*.db
+*.sqlite
+
+# EF Core Migrations temp
+Migrations/
+MigrationsBackup/
+
+# Node (if using frontend in same repo)
+node_modules/
+
+# =========================
+# Logs & Dumps
+# =========================
+*.log
+*.dmp
