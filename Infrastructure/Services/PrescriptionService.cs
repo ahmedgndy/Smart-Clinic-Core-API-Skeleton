@@ -29,8 +29,7 @@ namespace SmartClinic.Infrastructure.Services
             {
                 Id = Guid.NewGuid(),
                 AppointmentId = ap.Id,
-                DoctorId = ap.DoctorId,
-                PatientId = ap.PatientId,
+
                 Notes = dto.Notes,
                 CreatedAt = DateTime.UtcNow,
                 Items = dto.Items?.Select(i => new PrescriptionItem

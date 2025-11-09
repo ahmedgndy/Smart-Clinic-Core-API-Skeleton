@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using SmartClinic.Core.Interfaces;
 using SmartClinic.Infrastructure;
 using SmartClinic.Infrastructure.Repositories;
+using SmartClinic.Infrastructure.Services;
 using SmartClinic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +16,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ClinicDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-var app = builder.Build();
 
 // Repositories
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
@@ -22,6 +23,16 @@ builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 builder.Services.AddScoped<IMedicationRepository, MedicationRepository>();
 builder.Services.AddScoped<IPrescriptionRepository, PrescriptionRepository>();
+
+// Services
+builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+builder.Services.AddScoped<IMedicationService, MedicationService>();
+builder.Services.AddScoped<IPrescriptionService, PrescriptionService>();
+var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

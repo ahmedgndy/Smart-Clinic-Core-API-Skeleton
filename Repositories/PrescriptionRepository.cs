@@ -23,10 +23,14 @@ namespace SmartClinic.Infrastructure.Repositories
         public async Task<IEnumerable<Prescription>> ListByPatientAsync(Guid patientId)
         {
             return await _context.Prescriptions
-                .Where(p => p.PatientId == patientId)
-                .Include(p => p.Items).ThenInclude(i => i.Medication)
-                .ToListAsync();
+            // filter by the related appointment's patient id
+            .Where(p => p.Appointment != null && p.Appointment.PatientId == patientId)
+            // include items + medication for the returned prescriptions
+            .Include(p => p.Items)
+                .ThenInclude(i => i.Medication)
+            .ToListAsync();
         }
+
     }
 
 

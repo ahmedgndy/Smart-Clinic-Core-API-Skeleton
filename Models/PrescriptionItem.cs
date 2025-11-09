@@ -3,7 +3,7 @@ using SmartClinic.Models;
 
 public class PrescriptionItem
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
     public Guid PrescriptionId { get; set; }
     public Prescription Prescription { get; set; }
 

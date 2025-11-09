@@ -3,7 +3,7 @@ using SmartClinic.Models;
 
 public class Appointment
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
     public Guid DoctorId { get; set; }
     public Doctor Doctor { get; set; }
 

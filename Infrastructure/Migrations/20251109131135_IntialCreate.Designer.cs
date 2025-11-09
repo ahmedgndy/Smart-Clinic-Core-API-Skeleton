@@ -12,8 +12,8 @@ using SmartClinic.Infrastructure;
 namespace SmartClinic.Infrastructure.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
-    [Migration("20251109091214_InitalCreate")]
-    partial class InitalCreate
+    [Migration("20251109131135_IntialCreate")]
+    partial class IntialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
