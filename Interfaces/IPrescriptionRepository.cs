@@ -1,4 +1,4 @@
-using SmartClinic.Core.Interfaces;
+using SmartClinic.Interfaces;
 
 public interface IPrescriptionRepository : IRepository<Prescription>
 {

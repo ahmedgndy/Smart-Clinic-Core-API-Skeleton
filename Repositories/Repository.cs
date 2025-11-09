@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SmartClinic.Core.Interfaces;
+using SmartClinic.Interfaces;
 
 namespace SmartClinic.Infrastructure.Repositories
 {

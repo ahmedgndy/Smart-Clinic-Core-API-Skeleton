@@ -1,6 +1,6 @@
 using SmartClinic.Models;
 
-namespace SmartClinic.Core.Interfaces
+namespace SmartClinic.Interfaces
 {
     public interface IPatientService
     {

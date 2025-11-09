@@ -1,5 +1,5 @@
 
-namespace SmartClinic.Core.Interfaces
+namespace SmartClinic.Interfaces
 {
     public interface IRepository<T> where T : class
     {

@@ -1,4 +1,5 @@
-using SmartClinic.Core.Interfaces;
+
+using SmartClinic.Interfaces;
 using SmartClinic.Models;
 
 public interface IDoctorRepository : IRepository<Doctor> { }
