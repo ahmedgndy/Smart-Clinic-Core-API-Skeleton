@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
+namespace SmartClinic.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitalCreate : Migration

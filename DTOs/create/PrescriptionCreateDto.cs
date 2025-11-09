@@ -1,5 +1,7 @@
 
-namespace SmartClinic.DTOs.Create ;
+using SmartClinic.DTOs.Update;
+
+namespace SmartClinic.DTOs.Create;
 
 
 public class PrescriptionCreateDto

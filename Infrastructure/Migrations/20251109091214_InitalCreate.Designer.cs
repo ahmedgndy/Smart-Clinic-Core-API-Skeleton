@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Smart_Clinic_Core_APi.Infrastructur;
+using SmartClinic.Infrastructur;
 
 #nullable disable
 
-namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
+namespace SmartClinic.Infrastructure.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
     [Migration("20251109091214_InitalCreate")]
@@ -113,7 +113,7 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
                     b.ToTable("PrescriptionItems");
                 });
 
-            modelBuilder.Entity("Smart_Clinic_Core_APi.Models.Doctor", b =>
+            modelBuilder.Entity("SmartClinic.Models.Doctor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,7 +136,7 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("Smart_Clinic_Core_APi.Models.Medication", b =>
+            modelBuilder.Entity("SmartClinic.Models.Medication", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -155,7 +155,7 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
                     b.ToTable("Medications");
                 });
 
-            modelBuilder.Entity("Smart_Clinic_Core_APi.Models.Patient", b =>
+            modelBuilder.Entity("SmartClinic.Models.Patient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,13 +179,13 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
 
             modelBuilder.Entity("Appointment", b =>
                 {
-                    b.HasOne("Smart_Clinic_Core_APi.Models.Doctor", "Doctor")
+                    b.HasOne("SmartClinic.Models.Doctor", "Doctor")
                         .WithMany("Appointments")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Smart_Clinic_Core_APi.Models.Patient", "Patient")
+                    b.HasOne("SmartClinic.Models.Patient", "Patient")
                         .WithMany("Appointments")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -204,7 +204,7 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Smart_Clinic_Core_APi.Models.Patient", null)
+                    b.HasOne("SmartClinic.Models.Patient", null)
                         .WithMany("Prescriptions")
                         .HasForeignKey("PatientId");
 
@@ -213,7 +213,7 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
 
             modelBuilder.Entity("PrescriptionItem", b =>
                 {
-                    b.HasOne("Smart_Clinic_Core_APi.Models.Medication", "Medication")
+                    b.HasOne("SmartClinic.Models.Medication", "Medication")
                         .WithMany()
                         .HasForeignKey("MedicationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -241,12 +241,12 @@ namespace Smart_Clinic_Core_APi.Infrastructure.Migrations
                     b.Navigation("Items");
                 });
 
-            modelBuilder.Entity("Smart_Clinic_Core_APi.Models.Doctor", b =>
+            modelBuilder.Entity("SmartClinic.Models.Doctor", b =>
                 {
                     b.Navigation("Appointments");
                 });
 
-            modelBuilder.Entity("Smart_Clinic_Core_APi.Models.Patient", b =>
+            modelBuilder.Entity("SmartClinic.Models.Patient", b =>
                 {
                     b.Navigation("Appointments");
 

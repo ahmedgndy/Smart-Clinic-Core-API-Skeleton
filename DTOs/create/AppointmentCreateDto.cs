@@ -1,4 +1,4 @@
-namespace Smart_Clinic_Core_APi.DTOs.create
+namespace SmartClinic.DTOs.create
 {
     public class AppointmentCreateDto
     {

@@ -1,4 +1,4 @@
-using Smart_Clinic_Core_APi.Models;
+using SmartClinic.Models;
 
 
 public class PrescriptionItem

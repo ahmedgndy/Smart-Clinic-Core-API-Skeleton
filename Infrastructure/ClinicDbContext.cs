@@ -1,9 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
-using Smart_Clinic_Core_APi.Models;
+using SmartClinic.Models;
 
 
-namespace Smart_Clinic_Core_APi.Infrastructur;
+namespace SmartClinic.Infrastructur;
 
 
 public class ClinicDbContext : DbContext

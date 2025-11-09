@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Smart_Clinic_Core_APi.Models;
+using SmartClinic.Models;
 
-namespace Smart_Clinic_Core_APi.Infrastructure.Configurations
+namespace SmartClinic.Infrastructure.Configurations
 {
        public class PrescriptionConfiguration : IEntityTypeConfiguration<Prescription>
        {

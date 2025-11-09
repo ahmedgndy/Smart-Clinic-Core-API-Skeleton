@@ -1,5 +1,5 @@
-using Smart_Clinic_Core_APi.Enums;
-using Smart_Clinic_Core_APi.Models;
+using SmartClinic.Enums;
+using SmartClinic.Models;
 
 public class Appointment
 {

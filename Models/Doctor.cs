@@ -1,5 +1,5 @@
 
-namespace Smart_Clinic_Core_APi.Models
+namespace SmartClinic.Models
 {
     public class Doctor
     {
