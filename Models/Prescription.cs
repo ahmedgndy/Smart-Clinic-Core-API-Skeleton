@@ -9,7 +9,8 @@ public class Prescription
     public Appointment Appointment { get; set; }
 
 
-
+    public Guid PatientId { get; set; }
+    public Patient Patient { get; set; }
 
     // Simple representation of medications inside prescriptions
     public ICollection<PrescriptionItem> Items { get; set; }
