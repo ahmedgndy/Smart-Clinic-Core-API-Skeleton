@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SmartClinic.Models;
 
 
-namespace SmartClinic.Infrastructur;
+namespace SmartClinic.Infrastructure;
 
 
 public class ClinicDbContext : DbContext

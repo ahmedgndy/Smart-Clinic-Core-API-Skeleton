@@ -13,4 +13,5 @@ public interface IAppointmentService
     Task CancelAsync(Guid id);
     Task ApproveAsync(Guid id);
     Task RejectAsync(Guid id);
+
 }

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SmartClinic.Infrastructur;
+using SmartClinic.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
