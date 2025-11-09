@@ -11,4 +11,6 @@ public interface IAppointmentService
     Task<IEnumerable<Appointment>> ListByPatientAsync(Guid patientId);
     Task<Appointment> UpdateAsync(Guid id, AppointmentUpdateDto dto);
     Task CancelAsync(Guid id);
+    Task ApproveAsync(Guid id);
+    Task RejectAsync(Guid id);
 }
