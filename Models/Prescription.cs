@@ -1,4 +1,6 @@
-namespace Smart_Clinic_Core_APi.Models;
+
+
+using Smart_Clinic_Core_APi.Models;
 
 public class Prescription
 {
@@ -7,12 +9,6 @@ public class Prescription
     public Appointment Appointment { get; set; }
 
 
-    public Guid DoctorId { get; set; }
-    public Doctor Doctor { get; set; }
-
-
-    public Guid PatientId { get; set; }
-    public Patient Patient { get; set; }
 
 
     // Simple representation of medications inside prescriptions

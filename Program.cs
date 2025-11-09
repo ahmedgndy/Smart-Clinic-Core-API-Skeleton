@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Smart_Clinic_Core_APi.Infrastructur;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -7,7 +10,8 @@ builder.Services.AddControllers();
 //  Add Swagger services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddDbContext<ClinicDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

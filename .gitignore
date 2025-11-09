@@ -2,9 +2,9 @@
 /bin/
 /obj/
 /out/
+/vscode/
 
-# Visual Studio Code
-.vscode/
+
 
 # User-specific files
 *.user

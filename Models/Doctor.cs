@@ -1,3 +1,4 @@
+
 namespace Smart_Clinic_Core_APi.Models
 {
     public class Doctor

@@ -1,16 +1,17 @@
 
-
-using Smart_Clinic_Core_APi.Models;
 using Microsoft.EntityFrameworkCore;
+using Smart_Clinic_Core_APi.Models;
 
-namespace Smart_Clinic_Core_APi.Infrastructure;
+
+namespace Smart_Clinic_Core_APi.Infrastructur;
+
 
 public class ClinicDbContext : DbContext
 {
-    public ClinicDbContext(DbContextOptions<ClinicDbContext> options) : base(options)
+    public ClinicDbContext(DbContextOptions<ClinicDbContext> options)
+        : base(options)
     {
     }
-
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
@@ -24,13 +25,7 @@ public class ClinicDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
 
-        modelBuilder.Entity<Doctor>().HasKey(d => d.Id);
-        modelBuilder.Entity<Patient>().HasKey(p => p.Id);
-        modelBuilder.Entity<Appointment>().HasKey(a => a.Id);
-        modelBuilder.Entity<Medication>().HasKey(m => m.Id);
-        modelBuilder.Entity<Prescription>().HasKey(p => p.Id);
-        modelBuilder.Entity<PrescriptionItem>().HasKey(i => i.Id);
-
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClinicDbContext).Assembly);
 
         modelBuilder.Entity<Doctor>()
         .HasMany(d => d.Appointments)
