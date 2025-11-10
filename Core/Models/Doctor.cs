@@ -1,4 +1,6 @@
 
+using System.Text.Json.Serialization;
+
 namespace SmartClinic.Core.Models
 {
     public class Doctor
@@ -9,7 +11,7 @@ namespace SmartClinic.Core.Models
         public string Email { get; set; }
         // Additional fields (phone, bio, etc.)
 
-
+        [JsonIgnore]
         public ICollection<Appointment>? Appointments { get; set; }
 
     }

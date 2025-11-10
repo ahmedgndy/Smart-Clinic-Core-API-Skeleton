@@ -22,8 +22,6 @@ namespace SmartClinic.Infrastructure.Configurations
                      builder.Property(a => a.Status)
                             .IsRequired()
                       .HasColumnType("int");
-
-
               }
        }
 }
