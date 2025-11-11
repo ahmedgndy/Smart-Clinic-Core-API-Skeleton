@@ -13,6 +13,8 @@ namespace SmartClinic.Infrastructure
             : base(options)
         {
         }
+        public DbSet<User> Users => Set<User>();// read only property syntax
+
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }

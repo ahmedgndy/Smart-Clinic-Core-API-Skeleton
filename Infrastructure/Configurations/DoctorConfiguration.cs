@@ -22,6 +22,11 @@ namespace SmartClinic.Infrastructure.Configurations
                             .IsRequired()
                             .HasColumnType("nvarchar(100)");
 
+                     builder.HasOne(d => d.User)
+                            .WithMany()
+                            .HasForeignKey(d => d.UserId);
+
+
               }
        }
 }
