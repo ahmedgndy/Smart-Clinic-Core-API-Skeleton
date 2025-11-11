@@ -16,7 +16,6 @@ namespace SmartClinic.Core.Models
         // fk to a user
         public Guid UserId { get; set; }
         public User? User { get; set; }
-        // Additional fields (phone, bio, etc.)
 
         [JsonIgnore]
         public ICollection<Appointment>? Appointments { get; set; }

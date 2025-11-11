@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using SmartClinic.Core.Interfaces;
 using SmartClinic.Infrastructure;
 using SmartClinic.Infrastructure.Repositories;
+using SmartClinic.Infrastructure.Seed;
 using SmartClinic.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -83,6 +84,8 @@ builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IMedicationService, MedicationService>();
 builder.Services.AddScoped<IPrescriptionService, PrescriptionService>();
+builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 var app = builder.Build();
 
 
@@ -104,6 +107,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+// Apply migrations & seed admin on startup (we'll add seed below)
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ClinicDbContext>();
+    db.Database.Migrate();
+    await SmartClinicSeed.SeedAdminAsync(db, scope.ServiceProvider);
+}
 
 app.Run();

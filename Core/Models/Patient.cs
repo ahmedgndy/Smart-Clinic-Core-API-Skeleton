@@ -8,7 +8,7 @@ namespace SmartClinic.Core.Models
         public string Email { get; set; } = null!;
 
         // fk to a user
-        public Guid UserId { get; set; }
+        public Guid UserId { get; set; } // pleasssse chhhhhage thiiiis shhhhit 
         public User? User { get; set; }
 
         public ICollection<Appointment>? Appointments { get; set; } = new List<Appointment>();
