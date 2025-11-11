@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartClinic.Core.Interfaces;
 using SmartClinic.Core.Models;
@@ -7,6 +8,8 @@ namespace SmartClinic.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
+
     public class DoctorsController : ControllerBase
     {
         private readonly IDoctorService _service;

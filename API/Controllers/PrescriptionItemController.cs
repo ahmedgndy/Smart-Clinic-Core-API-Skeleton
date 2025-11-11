@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartClinic.Core.Interfaces;
 using SmartClinic.Core.Models;
@@ -17,6 +18,7 @@ namespace SmartClinic.API.Controllers
         }
 
         [HttpGet]
+
         public async Task<IActionResult> GetAll()
         {
             var items = await _repository.ListAsync();
@@ -33,6 +35,8 @@ namespace SmartClinic.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Doctor")]
+
         public async Task<IActionResult> Create(PrescriptionItem item)
         {
             await _repository.AddAsync(item);

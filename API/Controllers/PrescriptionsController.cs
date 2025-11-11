@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SmartClinic.Core.DTOs.Create;
 using SmartClinic.Core.Interfaces;
@@ -13,6 +14,8 @@ namespace SmartClinic.API.Controllers
         public PrescriptionsController(IPrescriptionService service) => _service = service;
 
         [HttpPost]
+        [Authorize(Roles = "Patient,Admin")]
+
         public async Task<IActionResult> Create([FromBody] PrescriptionCreateDto dto)
         {
             try
@@ -24,6 +27,8 @@ namespace SmartClinic.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
+
         public async Task<IActionResult> GetById(Guid id)
         {
             var p = await _service.GetByIdAsync(id);
@@ -32,6 +37,7 @@ namespace SmartClinic.API.Controllers
         }
 
         [HttpGet("by-patient/{patientId}")]
+        [Authorize(Roles = "Patient,Admin")]
         public async Task<IActionResult> ListByPatient(Guid patientId) => Ok(await _service.ListByPatientAsync(patientId));
     }
 }
