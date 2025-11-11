@@ -16,7 +16,11 @@ namespace SmartClinic.Infrastructure.Configurations
                      builder.Property(p => p.CreatedAt)
                                           .HasColumnType("datetime");
 
-
+                     builder
+                          .HasMany(p => p.Items)
+                          .WithOne(i => i.Prescription)
+                          .HasForeignKey(i => i.PrescriptionId)
+                          .OnDelete(DeleteBehavior.Cascade);
               }
        }
 }

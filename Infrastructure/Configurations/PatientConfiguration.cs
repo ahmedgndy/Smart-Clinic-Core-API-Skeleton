@@ -28,6 +28,8 @@ namespace SmartClinic.Infrastructure.Configurations
                    .WithMany()
                    .HasForeignKey(p => p.UserId);
 
+
+
         }
     }
 }

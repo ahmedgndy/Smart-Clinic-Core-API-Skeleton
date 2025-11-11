@@ -13,7 +13,6 @@ namespace SmartClinic.Core.Models
         public Guid AppointmentId { get; set; }
         public Appointment Appointment { get; set; } = new Appointment();
 
-
         public List<PrescriptionItem> Items { get; set; } = new();
         public string? Notes { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

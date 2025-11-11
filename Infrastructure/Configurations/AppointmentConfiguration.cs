@@ -26,6 +26,12 @@ namespace SmartClinic.Infrastructure.Configurations
                      builder.Property(a => a.RowVersion)
                       .IsRowVersion();
 
+                     builder
+                      .HasOne(a => a.Patient)
+                     .WithMany(p => p.Appointments)
+                     .HasForeignKey(a => a.PatientId)
+                     .OnDelete(DeleteBehavior.Restrict);
+
               }
        }
 }
