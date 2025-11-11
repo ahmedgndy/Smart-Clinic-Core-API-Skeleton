@@ -12,6 +12,10 @@ namespace SmartClinic.Core.Models
         public string FullName { get; set; }
         public string Specialty { get; set; }
         public string Email { get; set; }
+
+        // fk to a user
+        public Guid UserId { get; set; }
+        public User? User { get; set; }
         // Additional fields (phone, bio, etc.)
 
         [JsonIgnore]

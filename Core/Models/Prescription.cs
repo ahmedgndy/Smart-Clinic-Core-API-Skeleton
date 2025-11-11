@@ -11,11 +11,11 @@ namespace SmartClinic.Core.Models
 
         public Guid Id { get; set; } = Guid.NewGuid();
         public Guid AppointmentId { get; set; }
-        public Appointment Appointment { get; set; } = new Appointment
+        public Appointment Appointment { get; set; } = new Appointment();
 
 
-        public ICollection<PrescriptionItem> Items { get; set; };
-        public string Notes { get; set; }
+        public List<PrescriptionItem> Items { get; set; } = new();
+        public string? Notes { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

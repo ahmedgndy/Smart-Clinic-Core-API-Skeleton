@@ -12,9 +12,9 @@ public class PrescriptionItem
 
 
     public Guid MedicationId { get; set; }
-    public Medication Medication { get; set; } = new Medication();
+    public Medication? Medication { get; set; }
 
 
-    public string Dosage { get; set; }
-    public string Instructions { get; set; } = " ";
+    public string Dosage { get; set; } = null!;
+    public string Instructions { get; set; } = null!;
 }
