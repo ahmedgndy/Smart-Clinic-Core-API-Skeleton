@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SmartClinic.API.Middleware;
 using SmartClinic.Core.Interfaces;
 using SmartClinic.Infrastructure;
 using SmartClinic.Infrastructure.Repositories;
@@ -103,6 +104,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
 app.UseAuthorization();
 
 app.MapControllers();
