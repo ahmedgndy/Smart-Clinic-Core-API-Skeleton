@@ -8,6 +8,7 @@ namespace SmartClinic.Core.Models
         [JsonIgnore]
 
         public Guid Id { get; set; } = Guid.NewGuid();
+
         public string FullName { get; set; }
         public string Specialty { get; set; }
         public string Email { get; set; }
