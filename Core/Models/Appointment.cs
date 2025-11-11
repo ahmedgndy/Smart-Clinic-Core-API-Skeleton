@@ -6,6 +6,8 @@ namespace SmartClinic.Core.Models
 {
     public class Appointment
     {
+        [JsonIgnore]
+
         public Guid Id { get; set; } = Guid.NewGuid();
         public Guid DoctorId { get; set; }
         public Doctor Doctor { get; set; }

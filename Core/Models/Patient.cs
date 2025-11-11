@@ -8,7 +8,7 @@ namespace SmartClinic.Core.Models
         public string Email { get; set; }
 
 
-        public ICollection<Appointment>? Appointments { get; set; }
-        public ICollection<Prescription>? Prescriptions { get; set; }
+        public ICollection<Appointment>? Appointments { get; set; } = new List<Appointment>();
+        public ICollection<Prescription>? Prescriptions { get; set; } = new List<Prescription>();
     }
 }
